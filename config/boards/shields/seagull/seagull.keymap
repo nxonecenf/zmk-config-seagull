@@ -31,7 +31,7 @@
                 &bt BT_CLR      &none         &none           &bootloader
                 &none           &none         &none           &none
                 &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2    &none        &tog BLUETOOTH
-                &none           &none         &none           &none
+                &none           &none         &none           &studio_unlock
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
