@@ -2,6 +2,9 @@
 #include <physical_layouts.dtsi>
 
 / {
+	/* ===== WAJIB UNTUK ZMK STUDIO ===== */
+	zmk,physical-layouts = &physical_layout0;
+
 	chosen {
 		zephyr,display = &oled;
 		zmk,kscan = &default_kscan;
@@ -30,7 +33,7 @@
 		kscan = <&default_kscan>;
 		transform = <&default_transform>;
 
-		keys  //                     w   h    x    y     rot rx ry
+		keys
 			= <&key_physical_attrs 100 100    0    0       0  0  0>
 			, <&key_physical_attrs 100 100  100    0       0  0  0>
 			, <&key_physical_attrs 100 100  200    0       0  0  0>
@@ -45,7 +48,7 @@
 			, <&key_physical_attrs 100 100  100  200       0  0  0>
 			, <&key_physical_attrs 100 100  200  200       0  0  0>
 			, <&key_physical_attrs 100 100  300  200       0  0  0>
-			, <&key_physical_attrs 100 100  400  200       0  0  0> /* RC(2,4) */
+			, <&key_physical_attrs 100 100  400  200       0  0  0>
 
 			, <&key_physical_attrs 100 100    0  300       0  0  0>
 			, <&key_physical_attrs 100 100  100  300       0  0  0>
@@ -90,24 +93,24 @@
 };
 
 &pro_micro_i2c {
-    status = "okay";
+	status = "okay";
 
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;
+	oled: ssd1306@3c {
+		compatible = "solomon,ssd1306fb";
+		reg = <0x3c>;
 
-        width = <128>;
-        height = <32>;
+		width = <128>;
+		height = <32>;
 
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <31>;
+		segment-offset = <0>;
+		page-offset = <0>;
+		display-offset = <0>;
+		multiplex-ratio = <31>;
 
-        com-invdir;
-        segment-remap;
-        com-sequential;
+		com-invdir;
+		segment-remap;
+		com-sequential;
 
-        prechargep = <0x22>;
-    };
+		prechargep = <0x22>;
+	};
 };
