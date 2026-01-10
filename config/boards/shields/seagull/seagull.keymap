@@ -20,7 +20,10 @@
                 &kp KP_N0       &kp KP_DOT       &kp KP_PLUS      &kp KP_EQUAL
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            /* encoder CW / CCW */
+            encoder-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+            >;
         };
 
         /* ================= BLUETOOTH ================= */
@@ -34,10 +37,13 @@
                 &none           &none         &none           &studio_unlock
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            /* encoder tetap aktif di layer BT */
+            encoder-bindings = <
+                &inc_dec_kp C_VOL_UP C_VOL_DN
+            >;
         };
 
-        /* ================= RESERVED LAYERS (ZMK STUDIO) ================= */
+        /* ================= RESERVED (ZMK STUDIO) ================= */
         extra1 {
             status = "reserved";
         };
