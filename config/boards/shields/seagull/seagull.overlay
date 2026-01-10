@@ -1,3 +1,4 @@
+#include "seagull.dtsi"
 #include <physical_layouts.dtsi>
 
 / {
