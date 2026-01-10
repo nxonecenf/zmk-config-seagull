@@ -20,8 +20,8 @@
                 &kp KP_N0       &kp KP_DOT       &kp KP_PLUS      &kp KP_EQUAL
             >;
 
-            /* encoder CW / CCW */
-            encoder-bindings = <
+            /* encoder (sensor) */
+            sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN
             >;
         };
@@ -37,19 +37,13 @@
                 &none           &none         &none           &studio_unlock
             >;
 
-            /* encoder tetap aktif di layer BT */
-            encoder-bindings = <
+            sensor-bindings = <
                 &inc_dec_kp C_VOL_UP C_VOL_DN
             >;
         };
 
         /* ================= RESERVED (ZMK STUDIO) ================= */
-        extra1 {
-            status = "reserved";
-        };
-
-        extra2 {
-            status = "reserved";
-        };
+        extra1 { status = "reserved"; };
+        extra2 { status = "reserved"; };
     };
 };
