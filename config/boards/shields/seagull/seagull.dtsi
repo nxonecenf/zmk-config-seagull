@@ -56,8 +56,9 @@
             <&key_physical_attrs 100 100 200 300 0 0 0>,
             <&key_physical_attrs 100 100 300 300 0 0 0>;
 
-        encoders =
+        controls =
             <&encoder_physical_attrs 60 60 450 150 0>;
+
     };
 
     /* ================= KSCAN ================= */
