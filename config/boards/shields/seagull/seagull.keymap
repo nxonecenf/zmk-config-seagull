@@ -43,7 +43,9 @@
         };
 
         /* ================= RESERVED (ZMK STUDIO) ================= */
-        extra1 { status = "reserved"; };
-        extra2 { status = "reserved"; };
+        extra_layer_2 { status = "reserved"; };
+        extra_layer_3 { status = "reserved"; };
+        extra_layer_4 { status = "reserved"; };
+        extra_layer_5 { status = "reserved"; };
     };
 };
