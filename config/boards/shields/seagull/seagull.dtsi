@@ -1,12 +1,23 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <physical_layouts.dtsi>
 
-/ {
+/
+{
     chosen {
         zephyr,display = &oled;
         zmk,kscan = &default_kscan;
         zmk,matrix_transform = &default_transform;
         zmk,physical-layout = &physical_layout0;
+    };
+
+    /* Local fallback node for encoder physical attributes.
+     * Some environments may not provide a global
+     * `encoder_physical_attrs` label; provide a local one so
+     * the physical layout can reference it safely.
+     */
+    encoder_physical_attrs_local: encoder_physical_attrs_local {
+        compatible = "zmk,physical-encoder";
+        /* Positional values are supplied where the phandle is used. */
     };
 
     /* ================= MATRIX TRANSFORM ================= */
@@ -56,8 +67,12 @@
             <&key_physical_attrs 100 100 200 300 0 0 0>,
             <&key_physical_attrs 100 100 300 300 0 0 0>;
 
+        /* Use the local encoder physical attrs node as a safe fallback.
+         * If your environment provides &encoder_physical_attrs globally,
+         * you can change this to use that label instead.
+         */
         encoders =
-            <&encoder_physical_attrs 60 60 450 150 0>;
+            <&encoder_physical_attrs_local 60 60 450 150 0>;
     };
 
     /* ================= KSCAN ================= */
